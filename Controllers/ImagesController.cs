@@ -21,6 +21,13 @@ namespace SurveillanceAPI.Controllers
             return File(image, "image/jpeg");
         }
 
+        [HttpGet("newest")]
+        public IActionResult GetNewestImage()
+        {
+            var image = _imageService.GetNewestImage();
+            return File(image, "image/jpeg");
+        }
+
         [HttpPost]
         public async Task<IActionResult> UploadImage([FromForm] IFormFile file)
         {

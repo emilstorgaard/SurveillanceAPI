@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <Folder Include="Images\Saved\" />
-    <Folder Include="Images\Uploads\" />
     <Folder Include="Models\Dtos\" />
   </ItemGroup>
 

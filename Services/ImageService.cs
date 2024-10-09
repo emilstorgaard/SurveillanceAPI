@@ -24,6 +24,29 @@
             return image;
         }
 
+        public FileStream GetNewestImage()
+        {
+            // Get all image files from the directory
+            var files = Directory.GetFiles(_uploadFolderPath)
+                                 .Where(file => file.EndsWith(".jpg") || file.EndsWith(".jpeg") || file.EndsWith(".png"))
+                                 .OrderByDescending(file => new FileInfo(file).CreationTime)
+                                 .ToList();
+
+            //if (!files.Any())
+            //{
+            //    return NotFound("No images found.");
+            //}
+
+            // Get the most recent image
+            var newestFile = files.First();
+            var image = File.OpenRead(newestFile);
+
+            // Get the file extension and set the correct MIME type
+            //string mimeType = "image/" + Path.GetExtension(newestFile).TrimStart('.').ToLower();
+
+            return image;
+        }
+
         public async Task UploadImage(IFormFile file)
         {
             // Create a unique filename to avoid overwriting files
