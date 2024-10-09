@@ -1,0 +1,6 @@
+@SurveillanceAPI_HostAddress = http://localhost:5008
+
+# GET {{SurveillanceAPI_HostAddress}}/weatherforecast/
+# Accept: application/json
+
+###

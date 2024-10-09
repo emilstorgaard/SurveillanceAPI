@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  backend:
+    image: carpool_api:latest
+    ports:
+        - '8180:8080'
