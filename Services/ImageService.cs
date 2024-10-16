@@ -58,5 +58,18 @@
                 await file.CopyToAsync(stream);
             }
         }
+
+        public string Test(string filename)
+        {
+            var filePath = Path.Combine(_uploadFolderPath, filename);
+            if (File.Exists(filePath))
+            {
+                return filePath + " It exists";
+            }
+            else
+            {
+                return filePath + " It does not exist";
+            }
+        }
     }
 }

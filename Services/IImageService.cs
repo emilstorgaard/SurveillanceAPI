@@ -5,5 +5,6 @@
         FileStream GetImage(string imageName);
         FileStream GetNewestImage();
         Task UploadImage(IFormFile file);
+        string Test(string filename);
     }
 }

@@ -28,6 +28,12 @@ namespace SurveillanceAPI.Controllers
             return File(image, "image/jpeg");
         }
 
+        [HttpGet("test/{filename}")]
+        public IActionResult Test(string filename)
+        {
+            return Ok(_imageService.Test(filename));
+        }
+
         [HttpPost]
         public async Task<IActionResult> UploadImage([FromForm] IFormFile file)
         {
